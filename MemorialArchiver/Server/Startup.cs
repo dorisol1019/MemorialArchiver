@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Linq;
 
-namespace MemorialArchiver.Server
+namespace Dorisol1019.MemorialArchiver.Server
 {
     public class Startup
     {

@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MemorialArchiver.Shared
+namespace Dorisol1019.MemorialArchiver.Shared
 {
     public class WeatherForecast
     {

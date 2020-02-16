@@ -1,4 +1,4 @@
-﻿using MemorialArchiver.Shared;
+using Dorisol1019.MemorialArchiver.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace MemorialArchiver.Server.Controllers
+namespace Dorisol1019.MemorialArchiver.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
