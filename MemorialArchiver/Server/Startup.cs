@@ -13,6 +13,9 @@ namespace Dorisol1019.MemorialArchiver.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient(typeof(Domain.Memorial.IMemorialRepository<>), typeof(Infrastracture.Memorial.InMemoryMemorialRepository<>));
+            services.AddTransient(typeof(Domain.Memorial.IMemorialService<>), typeof(Infrastracture.Memorial.MemorialService<>));
+
             services.AddMvc();
             services.AddResponseCompression(opts =>
             {
