@@ -12,9 +12,10 @@ namespace Dorisol1019.MemorialArchiver.Shared.Models.Memorial
 
         public DateTime ReleaseDate { get; }
 
-        public Movie()
+        public Movie(long id,string name)
         {
-
+            Id = id;
+            Name = name;
         }
     }
 }

@@ -6,11 +6,20 @@ namespace Dorisol1019.MemorialArchiver.Shared.Models.Memorial
 {
     public class MovieCreateRequest : IMemorialCreateRequest<Movie>
     {
-        string Name { get; }
+        public string Name { get; set; }
+
+        public MovieCreateRequest() {
+            Name = "";
+        }
+
+        public MovieCreateRequest(string name)
+        {
+            Name = name;
+        }
 
         public Movie ToEntity(long Id)
         {
-            return new Movie();
+            return new Movie(Id, Name);
         }
     }
 }
