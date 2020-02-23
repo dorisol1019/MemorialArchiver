@@ -9,10 +9,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Dorisol1019.MemorialArchiver.Server.Controllers.Memorial
 {
-    public class MovieController : BaseMemorialController<Movie>
+    [Route("api/Memorial/[Controller]")]
+    [ApiController]
+    public class MovieController : ControllerBase
     {
-        public MovieController(IMemorialService<Movie> service) : base(service)
+        BaseMemorialController<Movie> controller;
+
+        public MovieController(IMemorialService<Movie> service)
         {
+            controller = new BaseMemorialController<Movie>(service);
+        }
+
+        [HttpGet]
+        public IEnumerable<Movie> GetAll()
+        {
+            return controller.GetAll();
+        }
+
+        [HttpPost]
+        public void Post(MovieCreateRequest request)
+        {
+            controller.Post(request);
         }
     }
 }
