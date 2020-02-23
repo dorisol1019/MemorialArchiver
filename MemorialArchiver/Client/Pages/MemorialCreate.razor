@@ -1,0 +1,34 @@
+@page "/Memorial/Create"
+<h3>MemorialCreate</h3>
+
+@using Blazor.Fluxor
+@using Stores.Memorial;
+@using Dorisol1019.MemorialArchiver.Shared.Models.Memorial;
+
+@using Stores;
+
+@inject IDispatcher Dispatcher
+@inject IState<MemorialState> memorialState
+
+
+<input type="text" @bind="this.request.Name" />
+<input type="button" class="btn btn-primary" @onclick="Add" value="add todo" />
+
+
+@code {
+
+    private MovieCreateRequest request = new MovieCreateRequest();
+
+    private void Add()
+    {
+        Dispatcher.Dispatch(new AddMemorialItemAction(request));
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        memorialState.Subscribe(this);
+
+    }
+}
