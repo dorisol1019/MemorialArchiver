@@ -21,7 +21,7 @@
 
     private void Add()
     {
-        Dispatcher.Dispatch(new AddMemorialItemAction(request));
+        Dispatcher.Dispatch(new AddMemorialItemAction<Movie>(request));
     }
 
     protected override void OnInitialized()

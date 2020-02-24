@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores.Memorial
 {
-    public class AddMemorialItemComplateReducer : Reducer<MemorialState,AddMemorialItemCompleteAction>
+    public class AddMemorialItemComplateReducer : Reducer<MemorialState,AddMemorialItemCompleteAction<Movie>>
     {
-        public override MemorialState Reduce(MemorialState state, AddMemorialItemCompleteAction action)
+        public override MemorialState Reduce(MemorialState state, AddMemorialItemCompleteAction<Movie> action)
         {
             // ここでStateを変更して返す
-            MovieCreateRequest request = action.Request;
+            IMemorialCreateRequest<Movie> request = action.Request;
 
             return state;
         }

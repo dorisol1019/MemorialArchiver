@@ -8,11 +8,11 @@ using Dorisol1019.MemorialArchiver.Shared.Models.Memorial;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores
 {
-    public class AddMemorialItemAction
+    public class AddMemorialItemAction<T>
     {
-        public MovieCreateRequest Request { get; }
+        public IMemorialCreateRequest<T> Request { get; }
 
-        public AddMemorialItemAction(MovieCreateRequest request)
+        public AddMemorialItemAction(IMemorialCreateRequest<T> request)
         {
             Request = request;
         }

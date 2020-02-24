@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores
 {
-    public class AddMemorialItemCompleteAction
+    public class AddMemorialItemCompleteAction<T>
     {
-        public MovieCreateRequest Request { get; }
+        public IMemorialCreateRequest<T> Request { get; }
 
-        public AddMemorialItemCompleteAction(MovieCreateRequest request)
+        public AddMemorialItemCompleteAction(IMemorialCreateRequest<T> request)
         {
             Request = request;
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores.Memorial
 {
-    public class AddMemorialItemEffect : Effect<AddMemorialItemAction>
+    public class AddMemorialItemEffect : Effect<AddMemorialItemAction<Movie>>
     {
 
         private readonly HttpClient client;
@@ -19,18 +19,29 @@ namespace Dorisol1019.MemorialArchiver.Client.Stores.Memorial
             this.client = client;
         }
 
-        protected override async Task HandleAsync(AddMemorialItemAction action, IDispatcher dispatcher)
+        protected override async Task HandleAsync(AddMemorialItemAction<Movie> action, IDispatcher dispatcher)
         {
             var request = action.Request;
             try
             {
-                await client.PostJsonAsync("api/Memorial/Movie", action.Request);
+                string uri = RequestURI(request);
+                await client.PostJsonAsync(uri, action.Request);
             }
             catch (Exception)
             {
                 throw;
             }
-            dispatcher.Dispatch(new AddMemorialItemCompleteAction(request));
+            dispatcher.Dispatch(new AddMemorialItemCompleteAction<Movie>(request));
+        }
+
+        private string RequestURI(IMemorialCreateRequest<Movie> request)
+        {
+            string baseUri = "api/Memorial/";
+            if(request is MovieCreateRequest)
+            {
+                return baseUri + "Movie";
+            }
+            throw new InvalidOperationException();
         }
     }
 }
