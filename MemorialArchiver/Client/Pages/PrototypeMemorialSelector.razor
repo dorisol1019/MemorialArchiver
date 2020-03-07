@@ -1,0 +1,19 @@
+@page "/Select"
+@inject NavigationManager navigation;
+<h3>MemorialSelector(Prototype)</h3>
+
+
+<button @onclick="NavigateToMemorialList">確認</button>
+<button @onclick="NavigateToMemorialCreate">投稿</button>
+
+@code {
+    private void NavigateToMemorialList()
+    {
+        navigation.NavigateTo("/Memorial/List");
+    }
+
+    private void NavigateToMemorialCreate()
+    {
+        navigation.NavigateTo("/Memorial/Create");
+    }
+}
