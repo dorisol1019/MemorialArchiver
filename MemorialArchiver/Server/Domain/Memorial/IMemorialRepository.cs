@@ -10,6 +10,6 @@ namespace Dorisol1019.MemorialArchiver.Server.Domain.Memorial
     {
         void Create(IMemorialCreateRequest<T> request);
 
-        IEnumerable<T> GetAll();
+        IEnumerable<T>? GetAll();
     }
 }

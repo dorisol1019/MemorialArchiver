@@ -18,12 +18,13 @@ namespace Dorisol1019.MemorialArchiver.Server.Infrastracture.Memorial
             id++;
         }
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T>? GetAll()
         {
-            foreach (var item in dic.Values)
+            if (!dic.Any())
             {
-                yield return item;
+                return null;
             }
+            return dic.Values;
         }
     }
 }

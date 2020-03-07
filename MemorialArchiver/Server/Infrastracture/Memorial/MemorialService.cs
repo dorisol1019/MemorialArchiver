@@ -23,7 +23,7 @@ namespace Dorisol1019.MemorialArchiver.Server.Infrastracture.Memorial
 
         public IEnumerable<T> GetAll()
         {
-            return repository.GetAll();
+            return repository.GetAll() ?? new T[0];
         }
 
         public void Update(int id)
