@@ -6,6 +6,6 @@ namespace Dorisol1019.MemorialArchiver.Shared.Models.Memorial
 {
     public abstract class MemorialBase
     {
-        public string Thoughts { get; }
+        public string Thoughts { get; set; }
     }
 }
