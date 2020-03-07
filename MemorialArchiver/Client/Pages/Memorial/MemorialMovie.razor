@@ -1,0 +1,24 @@
+<h3>MemorialMovie</h3>
+
+@using Dorisol1019.MemorialArchiver.Shared.Models.Memorial;
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">ID:</div>
+        <div class="col-sm">@Item.Id</div>
+    </div>
+    <div class="row">
+        <div class="col-sm">Name:</div>
+        <div class="col-sm">@Item.Name</div>
+    </div>
+</div>
+
+
+@code {
+#nullable disable
+
+    [Parameter]
+    public Movie Item { get; set; }
+#nullable enable
+}

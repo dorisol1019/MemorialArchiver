@@ -1,0 +1,42 @@
+@page "/Memorial/List"
+
+<h3>MomorialList</h3>
+
+
+@using Dorisol1019.MemorialArchiver.Shared.Models.Memorial;
+@inject HttpClient client;
+
+
+@if (memorialMovies == null)
+{
+    <p>取得中でござる</p>
+}
+else
+{
+    @if(memorialMovies.Any())
+    {
+        @foreach (var memorialMovie in memorialMovies)
+        {
+            <MemorialMovie Item="@memorialMovie" />
+        }
+    }
+    else
+    {
+        <p>なんもないよ</p>
+    }
+}
+
+@code {
+    private Movie[]? memorialMovies;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+
+        
+        var items = await client.GetJsonAsync<IEnumerable<Movie>>("api/Memorial/Movie");
+        memorialMovies = items.ToArray();
+
+        return ;
+    }
+}
