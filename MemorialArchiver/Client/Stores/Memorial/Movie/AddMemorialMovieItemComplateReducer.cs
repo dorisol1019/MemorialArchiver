@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores.Memorial
 {
-    public class AddMemorialItemComplateReducer : Reducer<MemorialState,AddMemorialItemCompleteAction<Movie>>
+    public class AddMemorialMovieItemComplateReducer : Reducer<MemorialState,AddMemorialItemCompleteAction<Movie>>
     {
         public override MemorialState Reduce(MemorialState state, AddMemorialItemCompleteAction<Movie> action)
         {

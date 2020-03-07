@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores.Memorial
 {
-    public class AddMemorialItemEffect : Effect<AddMemorialItemAction<Movie>>
+    public class AddMemorialMovieItemEffect : Effect<AddMemorialItemAction<Movie>>
     {
 
         private readonly HttpClient client;
 
-        public AddMemorialItemEffect(HttpClient client)
+        public AddMemorialMovieItemEffect(HttpClient client)
         {
             this.client = client;
         }
