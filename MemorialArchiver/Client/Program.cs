@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Text;
-using Microsoft.AspNetCore.Blazor.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
 using Blazor.Fluxor;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 namespace Dorisol1019.MemorialArchiver.Client
 {
@@ -17,6 +17,7 @@ namespace Dorisol1019.MemorialArchiver.Client
             builder.Services.AddFluxor(options
                => options.UseDependencyInjection(typeof(Program).Assembly));
             builder.RootComponents.Add<App>("app");
+            builder.Services.AddBaseAddressHttpClient();
 
             await builder.Build().RunAsync();
         }
