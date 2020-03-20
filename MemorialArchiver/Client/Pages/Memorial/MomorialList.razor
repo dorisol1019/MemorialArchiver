@@ -2,41 +2,42 @@
 
 <h3>MomorialList</h3>
 
+@inherits Blazor.Fluxor.Components.FluxorComponent
 
 @using Dorisol1019.MemorialArchiver.Shared.Models.Memorial;
 @inject HttpClient client;
 
 
-@if (memorialMovies == null)
+@using Blazor.Fluxor
+@using Stores.Memorial;
+
+@inject IDispatcher Dispatcher
+@inject IState<MemorialListState<Movie>> memorialState
+
+
+
+@if (memorialState.Value.IsLoading)
 {
     <p>取得中でござる</p>
 }
+else if (memorialState.Value.Memorials.Any())
+{
+    @foreach (var memorialMovie in memorialState.Value.Memorials)
+    {
+        <MemorialMovie Item="@memorialMovie" />
+    }
+}
 else
 {
-    @if(memorialMovies.Any())
-    {
-        @foreach (var memorialMovie in memorialMovies)
-        {
-            <MemorialMovie Item="@memorialMovie" />
-        }
-    }
-    else
-    {
-        <p>なんもないよ</p>
-    }
+    <p>なんもないよ</p>
 }
 
 @code {
-    private Movie[]? memorialMovies;
 
-    protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
-        await base.OnInitializedAsync();
+        base.OnInitialized();
 
-        
-        var items = await client.GetJsonAsync<IEnumerable<Movie>>("api/Memorial/Movie");
-        memorialMovies = items.ToArray();
-
-        return ;
+        Dispatcher.Dispatch(new FetchMemorialItemsAction());
     }
 }
