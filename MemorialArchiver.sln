@@ -12,7 +12,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{509955A6-FB49-41D4-9DA7-4DA49E0241D2}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
-		Dockerfile = Dockerfile
 	EndProjectSection
 EndProject
 Global
