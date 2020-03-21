@@ -1,4 +1,4 @@
-using Dorisol1019.MemorialArchiver.Shared.Models.Memorial;
+using Dorisol1019.MemorialArchiver.Shared.Models.Memorials;
 using System;
 using System.Collections.Generic;
 using System.Linq;

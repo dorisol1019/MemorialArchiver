@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Dorisol1019.MemorialArchiver.Shared.Models;
 using System.Net.Http;
 using Microsoft.AspNetCore.Components;
-using Dorisol1019.MemorialArchiver.Shared.Models.Memorial;
+using Dorisol1019.MemorialArchiver.Shared.Models.Memorials;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores.Memorial
 {

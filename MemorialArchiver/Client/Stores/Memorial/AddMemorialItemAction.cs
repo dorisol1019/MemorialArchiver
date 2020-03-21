@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 using Blazor.Fluxor;
-using Dorisol1019.MemorialArchiver.Shared.Models.Memorial;
+using Dorisol1019.MemorialArchiver.Shared.Models.Memorials;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores
 {
