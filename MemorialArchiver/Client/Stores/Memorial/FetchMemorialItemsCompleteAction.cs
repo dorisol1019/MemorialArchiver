@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores.Memorial
 {
-    public class FetchMemorialItemsCompleteAction
+    public class FetchMemorialItemsCompleteAction<T>
     {
-        public MemorialBase[] Memorials { get; }
+        public T[] Memorials { get; }
 
-        public FetchMemorialItemsCompleteAction(IEnumerable<MemorialBase> memorials)
+        public FetchMemorialItemsCompleteAction(IEnumerable<T> memorials)
         {
             Memorials = memorials.ToArray();
         }

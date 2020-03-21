@@ -24,7 +24,7 @@ namespace Dorisol1019.MemorialArchiver.Client.Stores.Memorial
             try
             {
                 var a = await client.GetJsonAsync<Movie[]>("api/Memorial/Movie");
-                dispatcher.Dispatch(new FetchMemorialItemsCompleteAction(a));
+                dispatcher.Dispatch(new FetchMemorialItemsCompleteAction<Movie>(a));
             }
             catch (Exception)
             {

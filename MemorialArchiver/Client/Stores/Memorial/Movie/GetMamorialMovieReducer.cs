@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Dorisol1019.MemorialArchiver.Client.Stores.Memorial
 {
-    public class GetMamorialMovieReducer : Reducer<MemorialListState<Movie>, FetchMemorialItemsCompleteAction>
+    public class GetMamorialMovieReducer : Reducer<MemorialListState<Movie>, FetchMemorialItemsCompleteAction<Movie>>
     {
-        public override MemorialListState<Movie> Reduce(MemorialListState<Movie> state, FetchMemorialItemsCompleteAction action)
+        public override MemorialListState<Movie> Reduce(MemorialListState<Movie> state, FetchMemorialItemsCompleteAction<Movie> action)
         {
-            return new MemorialListState<Movie>(false, action.Memorials.Select(e => (Movie)e));
+            return new MemorialListState<Movie>(false, action.Memorials);
         }
     }
 }
