@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazor.Fluxor" Version="2.0.1" />
+    <PackageReference Include="MatBlazor" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.2.0-preview2.20160.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="3.2.0-preview2.20160.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Build" Version="3.2.0-preview2.20160.5" />
